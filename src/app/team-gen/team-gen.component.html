@@ -1,0 +1,118 @@
+<ng-container *ngIf="team">
+    <h2>Position Players</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Jersey Number</th>
+                <th>Position</th>
+                <th>Handedness</th>
+                <th>Age</th>
+                <th>Traits</th>
+                <th>Batter Target</th>
+                <th>On Base Target</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let player of team.PositionPlayers">
+                <td>{{ player.name }}</td>
+                <td>{{ player.jerseyNumber }}</td>
+                <td>{{ player.position }}</td>
+                <td>{{ player.handedness }}</td>
+                <td>{{ player.age }}</td>
+                <td>{{ player.traits }}</td>
+                <td>{{ player.batterTarget }}</td>
+                <td>{{ player.onBaseTarget }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Bench Players</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Jersey Number</th>
+                <th>Position</th>
+                <th>Handedness</th>
+                <th>Age</th>
+                <th>Traits</th>
+                <th>Batter Target</th>
+                <th>On Base Target</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let player of team.BenchPlayers">
+                <td>{{ player.name }}</td>
+                <td>{{ player.jerseyNumber }}</td>
+                <td>{{ player.position }}</td>
+                <td>{{ player.handedness }}</td>
+                <td>{{ player.age }}</td>
+                <td>{{ player.traits }}</td>
+                <td>{{ player.batterTarget }}</td>
+                <td>{{ player.onBaseTarget }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Starting Pitchers</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Jersey Number</th>
+                <th>Position</th>
+                <th>Handedness</th>
+                <th>Age</th>
+                <th>Traits</th>
+                <th>Batter Target</th>
+                <th>On Base Target</th>
+                <th>Pitch Die</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let player of team.StartingPitchers">
+                <td>{{ player.name }}</td>
+                <td>{{ player.jerseyNumber }}</td>
+                <td>{{ player.position }}</td>
+                <td>{{ player.handedness }}</td>
+                <td>{{ player.age }}</td>
+                <td>{{ player.traits }}</td>
+                <td>{{ player.batterTarget }}</td>
+                <td>{{ player.onBaseTarget }}</td>
+                <td>{{ player.pitchDie }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Relief Pitchers</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Jersey Number</th>
+                <th>Position</th>
+                <th>Handedness</th>
+                <th>Age</th>
+                <th>Traits</th>
+                <th>Batter Target</th>
+                <th>On Base Target</th>
+                <th>Pitch Die</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let player of team.ReliefPitchers">
+                <td>{{ player.name }}</td>
+                <td>{{ player.jerseyNumber }}</td>
+                <td>{{ player.position }}</td>
+                <td>{{ player.handedness }}</td>
+                <td>{{ player.age }}</td>
+                <td>{{ player.traits }}</td>
+                <td>{{ player.batterTarget }}</td>
+                <td>{{ player.onBaseTarget }}</td>
+                <td>{{ player.pitchDie }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+</ng-container>

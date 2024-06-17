@@ -1,0 +1,13 @@
+:root {
+    color-scheme: light dark;
+}
+
+.bases-sgv>path {
+    fill: light-dark(white, black);
+    stroke: light-dark(black,white);
+    stroke-width: 0.2;
+}
+
+.onBase {
+    fill: light-dark(black,white) !important;
+}
