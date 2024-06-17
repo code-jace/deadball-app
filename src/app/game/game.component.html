@@ -1,0 +1,30 @@
+<h1>Baseball Game</h1>
+<div>
+    <button (click)="startGame()">Start Game</button>
+    <button (click)="nextAtBat()">Next At Bat</button>
+    <button (click)="gameService.toggleAutoAdvance()">
+      {{ gameService.autoAdvanceEnabled ? 'Disable Auto Advance' : 'Enable Auto Advance' }}
+    </button>
+  </div>
+<div class="scoreboard">
+  <h2>Score</h2>
+  <div class="score-container">
+    <div *ngFor="let inning of gameService.score; let i = index;" class="inning">
+      <h3>Inning {{ i + 1 }}</h3>
+      <p>Team 1: {{ inning['Team 1'] }}</p>
+      <p>Team 2: {{ inning['Team 2'] }}</p>
+    </div>
+    <div class="total-score">
+      <h3>Total Scores</h3>
+      <p>Team 1: {{ getTotalScore('Team 1') }}</p>
+      <p>Team 2: {{ getTotalScore('Team 2') }}</p>
+    </div>
+  </div>
+</div>
+<div>
+  <h2>{{ gameService.isTeam1Batting? 'Top':'Bottom' }} of Inning: {{ gameService.currentInning }}</h2>
+</div>
+
+<app-baseball-diamond style="width: 200px;" [basesState]="getBasesState()"></app-baseball-diamond>
+
+{{getBasesState()|json}}

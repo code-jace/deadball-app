@@ -1,0 +1,24 @@
+.scoreboard {
+    display: flex;
+    flex-wrap: nowrap; /* Ensure items stay in a single row */
+    overflow-x: auto; /* Allow horizontal scrolling if needed */
+    max-width: 100%; /* Adjust width as per your layout */
+  }
+  
+  .score-container {
+    display: flex;
+  }
+  
+  .inning {
+    margin: 0 10px; /* Adjust spacing between innings */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .total-score {
+    margin-left: auto; /* Push the total scores to the end of the scoreboard */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
