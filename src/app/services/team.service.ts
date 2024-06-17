@@ -37,7 +37,7 @@ export class TeamService {
     benchPlayers.push(this.playerService.generateBaseballPlayer('Utility', true)); 
 
     const startingPitchers = Array(5).fill(null).map(() => this.playerService.generateBaseballPlayer('Starting Pitcher'),true);
-    const reliefPitchers = Array(5).fill(null).map(() => this.playerService.generateBaseballPlayer('Relief Pitcher'),true);
+    const reliefPitchers = Array(7).fill(null).map(() => this.playerService.generateBaseballPlayer('Relief Pitcher'),true);
 
     return {
       PositionPlayers: positionPlayers,
