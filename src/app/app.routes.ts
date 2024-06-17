@@ -7,9 +7,9 @@ export const routes: Routes = [
         path: 'team-gen',
         component: TeamGenComponent,
       },
-      {
-        path: 'play-ball',
-        component: GameComponent,
-      },
+      // {
+      //   path: 'play-ball',
+      //   component: GameComponent,
+      // },
       
 ];
