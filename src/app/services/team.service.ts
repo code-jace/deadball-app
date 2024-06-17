@@ -2,15 +2,17 @@ import { Injectable } from '@angular/core';
 import { Team } from '../models/Team';
 import { Player } from '../models/Player';
 import { PlayerService } from './player.service';
+import * as RandomName from 'node-random-name';
+import { DiceService } from './dice.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TeamService {
 
-  constructor(private playerService: PlayerService) { }
+  constructor(private playerService: PlayerService, private diceService: DiceService) { }
 
-
+  usedJerseys: Array<number> = [];
 
   /**
    * Generates a new team with position players, bench players, starting pitchers, and relief pitchers.
@@ -39,11 +41,26 @@ export class TeamService {
     const startingPitchers = Array(5).fill(null).map(() => this.playerService.generateBaseballPlayer('Starting Pitcher'),true);
     const reliefPitchers = Array(7).fill(null).map(() => this.playerService.generateBaseballPlayer('Relief Pitcher'),true);
 
+    // some last minute nonsense like giving random names and numbers that dont repeat
+    positionPlayers.map(x => this.individualise(x));
+    benchPlayers.map(x => this.individualise(x));
+    startingPitchers.map(x => this.individualise(x));
+    reliefPitchers.map(x => this.individualise(x));
+
     return {
-      PositionPlayers: positionPlayers,
-      BenchPlayers: benchPlayers,
-      StartingPitchers: startingPitchers,
-      ReliefPitchers: reliefPitchers
+      positionPlayers: positionPlayers,
+      benchPlayers: benchPlayers,
+      startingPitchers: startingPitchers,
+      reliefPitchers: reliefPitchers
     };
+  }
+
+  individualise = (p: Player):void => {
+    p.name = RandomName.default({random: Math.random});
+    let jNumber = null;
+    while (!jNumber || this.usedJerseys.indexOf(jNumber) !== -1) {
+      jNumber = this.diceService.rollDice('1d100');
+    }
+    p.jerseyNumber = ''+jNumber;
   }
 }

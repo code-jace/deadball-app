@@ -14,7 +14,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let player of team.PositionPlayers">
+            <tr *ngFor="let player of team.positionPlayers">
                 <td>{{ player.name }}</td>
                 <td>{{ player.jerseyNumber }}</td>
                 <td>{{ player.position }}</td>
@@ -42,7 +42,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let player of team.BenchPlayers">
+            <tr *ngFor="let player of team.benchPlayers">
                 <td>{{ player.name }}</td>
                 <td>{{ player.jerseyNumber }}</td>
                 <td>{{ player.position }}</td>
@@ -71,7 +71,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let player of team.StartingPitchers">
+            <tr *ngFor="let player of team.startingPitchers">
                 <td>{{ player.name }}</td>
                 <td>{{ player.jerseyNumber }}</td>
                 <td>{{ player.position }}</td>
@@ -101,7 +101,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let player of team.ReliefPitchers">
+            <tr *ngFor="let player of team.reliefPitchers">
                 <td>{{ player.name }}</td>
                 <td>{{ player.jerseyNumber }}</td>
                 <td>{{ player.position }}</td>
